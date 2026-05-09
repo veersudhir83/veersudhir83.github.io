@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AI Prompt Library — Sudheer Veeravalli</title>
+<meta name="description" content="A curated, searchable collection of 100+ AI prompts for career growth, automation, communication, and productivity.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#e0e0e0;min-height:100vh}
+a{color:#18d26e;text-decoration:none}
+a:hover{color:#35e888}
+.top-bar{background:rgba(0,0,0,0.95);border-bottom:1px solid rgba(24,210,110,0.15);padding:16px 24px;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.top-bar h1{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:#fff}
+.top-bar h1 span{color:#18d26e}
+.back-link{font-size:14px;color:rgba(255,255,255,0.6);transition:0.3s}
+.back-link:hover{color:#18d26e}
+.search-wrap{width:100%;max-width:500px;position:relative}
+.search-wrap input{width:100%;padding:12px 16px 12px 42px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#fff;font-size:15px;outline:none;transition:0.3s}
+.search-wrap input:focus{border-color:#18d26e;background:rgba(24,210,110,0.05);box-shadow:0 0 20px rgba(24,210,110,0.1)}
+.search-wrap input::placeholder{color:rgba(255,255,255,0.3)}
+.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:rgba(255,255,255,0.3)}
+.stats{font-size:13px;color:rgba(255,255,255,0.4);padding:4px 0}
+.container{max-width:1100px;margin:0 auto;padding:24px 20px 60px}
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.cat-btn{padding:8px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.7);font-size:13px;cursor:pointer;transition:0.3s;font-family:'Inter',sans-serif}
+.cat-btn:hover{border-color:rgba(24,210,110,0.4);color:#fff;background:rgba(24,210,110,0.08)}
+.cat-btn.active{background:rgba(24,210,110,0.15);border-color:#18d26e;color:#18d26e;font-weight:600}
+.cat-count{background:rgba(255,255,255,0.1);padding:2px 7px;border-radius:10px;font-size:11px;margin-left:6px}
+.cat-btn.active .cat-count{background:rgba(24,210,110,0.2)}
+.section-hdr{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff;margin:32px 0 16px;padding-bottom:10px;border-bottom:2px solid rgba(24,210,110,0.2);display:flex;align-items:center;gap:10px}
+.section-hdr .emoji{font-size:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;margin-bottom:20px}
+.card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;transition:all 0.3s;cursor:pointer;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#18d26e,#0ea5e9);opacity:0;transition:0.3s}
+.card:hover{border-color:rgba(24,210,110,0.3);background:rgba(24,210,110,0.03);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+.card:hover::before{opacity:1}
+.card-num{font-size:11px;font-weight:700;color:#18d26e;background:rgba(24,210,110,0.1);padding:2px 8px;border-radius:6px;display:inline-block;margin-bottom:8px}
+.card h3{font-size:15px;font-weight:600;color:#fff;margin-bottom:10px;line-height:1.4}
+.card-prompt{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;max-height:80px;overflow:hidden;transition:0.3s}
+.card.expanded .card-prompt{max-height:2000px}
+.card-tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.4);margin-top:10px}
+.card-actions{display:flex;gap:8px;margin-top:12px;opacity:0;transition:0.3s}
+.card:hover .card-actions{opacity:1}
+.copy-btn{padding:6px 14px;border-radius:8px;border:1px solid rgba(24,210,110,0.3);background:rgba(24,210,110,0.08);color:#18d26e;font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:0.2s}
+.copy-btn:hover{background:#18d26e;color:#000}
+.copy-btn.copied{background:#18d26e;color:#000}
+.no-results{text-align:center;padding:60px 20px;color:rgba(255,255,255,0.3);font-size:16px}
+mark{background:rgba(24,210,110,0.25);color:#fff;padding:1px 2px;border-radius:2px}
+.scroll-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:#18d26e;color:#000;border:none;cursor:pointer;font-size:20px;display:none;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(24,210,110,0.3);transition:0.3s;z-index:50}
+.scroll-top:hover{transform:scale(1.1)}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.top-bar h1{font-size:16px}.section-hdr{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="top-bar">
+<div><a href="index.html" class="back-link">← Back to Portfolio</a>
+<h1>🧠 AI <span>Prompt</span> Library</h1></div>
+<div class="search-wrap">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+<input type="text" id="searchInput" placeholder="Search prompts... (e.g. resume, automation, interview)">
+</div>
+<div class="stats" id="stats"></div>
+</div>
+<div class="container">
+<div class="cats" id="cats"></div>
+<div id="content"></div>
+<div class="no-results" id="noResults" style="display:none">No prompts match your search. Try different keywords.</div>
+</div>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const DATA=[
+{cat:"Career Direction",icon:"🎯",items:[
+{t:"Career Path Finder",p:"Act as a career coach. Based on my background: Education: [your education] Skills: [your skills] Experience: [your experience] Suggest 5 high-growth career paths. For each, include salary range, required skills, and how to get started."},
+{t:"Skill Gap Analysis",p:"I want to become a [target role]. My current skills are: [list]. Compare my skills with industry requirements and give me a detailed skill gap analysis & priority order to learn."},
+{t:"Career Roadmap",p:"Create a step-by-step roadmap (0 to job-ready) to become a [role]. Include: skills, tools, projects, certifications, and timeline."},
+{t:"Future-Proof Skills",p:"In the [industry], what skills will be most valuable in the next 5–10 years? Explain why and how to start learning each."},
+{t:"Skill Combination Strategy",p:"Suggest high-income skill combinations using [my skills] that can create unique career opportunities."},
+{t:"Role Mapping",p:"Based on my current job as [title] and my skills [list], map 3 realistic career paths for the next 5 years with salary ranges."},
+{t:"Career Pivot Guide",p:"I want to move from [industry A] to [industry B]. Suggest transferable skills, quick certifications, and networking steps."},
+{t:"5-Year Career Plan",p:"Create a detailed 5-year career growth plan for someone in [industry]. Include salary growth, skill progression, and opportunities."},
+{t:"Promotion Blueprint",p:"Draft a 90-day action plan to position me for promotion to [next role] at my current company."},
+{t:"Promotion Plan",p:"I'm currently a [role]. I want to become [next role]. What skills and actions should I take in the next 6 months?"}
+]},
+{cat:"Learning & Upskilling",icon:"📚",items:[
+{t:"80/20 Learning",p:"Teach me the most important 20% of [skill] that gives 80% results. Keep it practical."},
+{t:"30-Day Learning Plan",p:"Create a 30-day learning plan for [skill] with daily tasks, practice, and resources."},
+{t:"Beginner to Advanced",p:"Teach me [topic] from beginner to advanced step-by-step with examples and exercises."},
+{t:"Project-Based Learning",p:"Suggest 10 real-world projects for [skill]. Include beginner to advanced level and what each project proves."},
+{t:"Practice Generator",p:"Create 20 practice problems for [skill] with increasing difficulty and solutions."},
+{t:"7-Day Quick Learning Plan",p:"Build a 7-day quick learning plan for this skill. Include daily tasks, examples, practice work, and checkpoints. Skill: [write skill]"},
+{t:"12-Week Learning Roadmap",p:"Design a 12-week learning plan to master [specific skill/technology] including free and paid resources."},
+{t:"Daily Micro-Learning Calendar",p:"Create a 30-day micro-learning calendar with 20-minute daily tasks to improve my [skill] proficiency."},
+{t:"Certification Finder",p:"List industry-recognized certifications that will boost my credibility as a [role]."},
+{t:"Video Transcript to Notes",p:"Summarize this video transcript. Give the main ideas, steps, examples, and takeaways. Transcript: [paste text]"}
+]},
+{cat:"Job Preparation",icon:"💼",items:[
+{t:"Resume Upgrade",p:"Act as a hiring manager. Improve my resume for [role]. Here is my resume: [paste]. Make it ATS-friendly and impactful."},
+{t:"ATS Optimization",p:"Rewrite my resume to pass ATS systems for [job role]. Add keywords based on job descriptions."},
+{t:"Portfolio Builder",p:"What projects should I build to stand out as a [role]? Include GitHub + real-world ideas."},
+{t:"Job Market Analysis",p:"Analyze current job trends for [role]. List top skills, tools, and hiring patterns."},
+{t:"LinkedIn Optimizer",p:"Optimize my LinkedIn profile for [industry]. Include headline, about section, and content strategy."},
+{t:"Job-Ready Resume Section",p:"Create a job-focused resume section based on this experience. Write short bullets using strong action verbs. Experience: [paste details]"},
+{t:"Job Search Automation",p:"I'm applying for jobs in [field]. Create a system to automate job search, resume customization, and application tracking."},
+{t:"Remote Job Strategy",p:"How can I find and land remote jobs in [industry]? Include platforms and strategies."}
+]},
+{cat:"Interview Preparation",icon:"🎤",items:[
+{t:"Mock Interview",p:"Act as an interviewer for [role]. Ask me 20 questions one by one and evaluate my answers."},
+{t:"Behavioral Answers (STAR)",p:"Give top behavioral interview questions and strong STAR-method answers for [role]."},
+{t:"Technical Drill",p:"Test my knowledge in [skill] with interview-level questions and explain answers."},
+{t:"Salary Negotiation Script",p:"Teach me how to negotiate salary for [role] with scripts and examples."},
+{t:"Interview Mistakes to Avoid",p:"What common mistakes do candidates make in [role] interviews and how to avoid them?"},
+{t:"Confidence Builder for Interviews",p:"Act as a confidence coach and help me build confidence for my career and interviews. Ask where I lack confidence, identify root causes, help reframe thinking, give practical exercises, simulate real situations, provide feedback, and end with a daily confidence system."}
+]},
+{cat:"Salary & Negotiation",icon:"💵",items:[
+{t:"Market Salary Benchmark",p:"Research and summarize salary benchmarks for a [role] in [location] with 5 years' experience."},
+{t:"Negotiation Script",p:"Create a professional salary negotiation script when I receive a job offer for [position] at [company]."},
+{t:"Raise Request Email",p:"Draft an email to my manager requesting a salary review, highlighting my achievements and market data."},
+{t:"Freelancing Plan",p:"How can I start freelancing in [skill]? Include platforms, pricing, and client acquisition."},
+{t:"Side Hustle Ideas",p:"Suggest 10 side hustle ideas using [skill] that can generate income."},
+{t:"Skill Monetization Path",p:"Outline 5 ways to monetize [skill] in 2026, including freelance gigs on Upwork/Fiverr, AI product ideas, and passive income via Gumroad or NFTs."}
+]},
+{cat:"Leadership & Growth",icon:"🚀",items:[
+{t:"Team Lead Starter Pack",p:"Outline the first 90 days of actions for a new team lead to earn trust and deliver results."},
+{t:"Conflict Resolution Coach",p:"Give me a step-by-step approach to resolve a conflict between two team members with minimal tension."},
+{t:"Mentorship Match",p:"Suggest strategies to find and approach a mentor in [field] who aligns with my career goals."},
+{t:"Executive Presence",p:"Provide daily habits and communication tips to strengthen executive presence and inspire confidence in meetings."},
+{t:"High-Income Skills Discovery",p:"What high-income skills should I learn to increase my salary in [industry]?"},
+{t:"Personal Branding",p:"How can I build a strong personal brand in [industry]? Give content ideas + platforms."},
+{t:"Networking Strategy",p:"Create a networking plan to connect with industry professionals and get opportunities."},
+{t:"AI Productivity Booster",p:"How can I use AI tools to improve productivity and income in [role]?"}
+]},
+{cat:"Networking & Branding",icon:"🤝",items:[
+{t:"LinkedIn Glow-Up",p:"Rewrite my LinkedIn headline and summary to highlight my expertise in [field] and attract recruiters."},
+{t:"Elevator Pitch",p:"Craft a 30-second personal pitch that explains my value and unique skills to potential employers."},
+{t:"Coffee Chat Script",p:"Write a friendly outreach message to request an informational interview with a senior professional in [industry]."},
+{t:"4-Week Content Strategy",p:"Plan 4 weeks of LinkedIn posts to position me as a thought leader in [topic]."},
+{t:"Quarterly Review Prep",p:"Summarize my key achievements from these notes [paste] into bullet points for my manager's review."},
+{t:"SMART Goals Converter",p:"Turn my annual objectives [paste] into SMART goals with measurable outcomes."}
+]},
+{cat:"Communication Skills",icon:"🗣️",items:[
+{t:"Public Speaking Practice",p:"Act as a coach. Help me structure a 2-min speech on [topic] — with a hook, main message, and confident closing."},
+{t:"Tone Improver",p:"Rewrite this message to sound professional yet friendly: [paste]. Suggest 3 tone styles — formal, casual, persuasive."},
+{t:"Email Polisher",p:"Edit this email for clarity, tone, and professionalism: [paste]. Make it concise and polite."},
+{t:"Meeting Communication Tips",p:"I struggle to speak confidently in meetings. Give me sample phrases to express opinions clearly and respectfully."},
+{t:"Active Listening Trainer",p:"Teach me 5 techniques to become a better listener. Include examples of thoughtful responses."},
+{t:"Presentation Coach",p:"Help me create a 5-slide presentation on [topic]. Suggest what to say and how to keep it engaging."},
+{t:"Conflict Resolution Roleplay",p:"Act as a colleague. Simulate a disagreement on a project. After my reply, give feedback on how I handled it."},
+{t:"Persuasion Practice",p:"Teach me how to persuade effectively. Give 3 examples using logic and empathy."},
+{t:"Storytelling for Impact",p:"Show me how to turn a simple experience into a short, impactful story for better communication."},
+{t:"Feedback Communication",p:"How do I give constructive feedback without sounding rude? Share 3 examples — for a peer, junior, and senior."},
+{t:"Communication Coach (Full)",p:"Act as a communication coach for [CONTEXT]. Ask where I struggle, analyze my level, teach frameworks, give exercises, simulate conversations, provide feedback, and end with a daily improvement plan."}
+]},
+{cat:"Work Automation",icon:"⚙️",items:[
+{t:"Email Summary + Reply",p:"Here is an email thread. Summarize the key points in 5 bullets. Draft a short reply that answers every point. Keep it clear and polite. Thread: [paste email]"},
+{t:"Meeting Notes to Tasks",p:"These are my meeting notes. Extract decisions, deadlines, and owners. Create a task list in a table with columns: Task, Owner, Deadline, Priority. Notes: [paste notes]"},
+{t:"Short Notes to Full Report",p:"I need a full report on this topic. Use my notes and expand them with data, examples, and steps. Keep it structured. Notes: [paste notes]"},
+{t:"SOP Generator",p:"I want a step by step SOP for this process. Add tools, checkpoints, common mistakes, and time estimates. Process: [describe the process]"},
+{t:"Raw Data to Insights",p:"Here is my data summary. Give 5 insights, 3 risks, and 3 actions. Write it in short bullets. Data: [paste data]"},
+{t:"Reusable Templates",p:"Create a reusable template for [proposal, report, email, plan]. Include sections, prompts for each section, and a clean layout."},
+{t:"Clean Messy Text",p:"Clean this text. Fix spelling, grammar, and structure. Keep the tone simple. Remove filler. Text: [paste text]"},
+{t:"Build Automation Workflows",p:"Explain a full automation workflow for this task. Include triggers, steps, tools, integrations, and time saved. Task: [describe task]"},
+{t:"Client Proposal Generator",p:"Create a proposal for this project. Add scope, deliverables, timelines, pricing options, and FAQs. Project: [paste info]"},
+{t:"Error Troubleshooting",p:"Explain why this error happens. Give step by step fixes. Add alternate solutions. Error: [paste error]"}
+]},
+{cat:"Daily Task Automation",icon:"🤖",items:[
+{t:"Automate Daily Routine",p:"I follow this daily routine: [list your tasks]. Identify repetitive tasks that can be automated. Suggest tools (Zapier, Google Sheets, Notion, etc.) and give me a step-by-step automation workflow."},
+{t:"Email Automation System",p:"I receive these types of emails daily: [list]. Create templates, filters, and auto-reply logic to reduce manual work. Include Gmail rules and response templates."},
+{t:"Auto Reporting Workflow",p:"I create reports in [Excel/Power BI/Google Sheets]. Design an automated workflow to fetch, clean, and visualize data with minimal manual effort."},
+{t:"Task Prioritization Engine",p:"I have these daily tasks: [list]. Create an automated prioritization system using urgency, importance, and deadlines. Suggest a repeatable workflow."},
+{t:"Smart Calendar Planner",p:"Based on my goals and tasks, create a dynamic daily schedule that auto-adjusts when tasks are delayed or new tasks are added."},
+{t:"Social Media Automation",p:"I manage social media for [platform]. Create a system to plan, generate, and schedule posts automatically for 30 days."},
+{t:"Content Creation Pipeline",p:"I create content on [topic]. Build an automated pipeline from idea generation → writing → editing → posting. Include tools and templates."},
+{t:"File Organization Automation",p:"My files are messy. Create a system to automatically organize files into folders based on type, date, or keywords."},
+{t:"Repetitive Work Eliminator",p:"I repeatedly do these tasks: [list]. Identify what can be automated or simplified. Suggest scripts, shortcuts, or AI tools."},
+{t:"Data Entry Automation",p:"I manually enter data into [tool/system]. Suggest ways to automate this using forms, APIs, or integrations."},
+{t:"Habit Tracking Automation",p:"Design a system that tracks my habits automatically and generates weekly progress insights."},
+{t:"Chatbot for Routine Queries",p:"I get repeated questions about [topic]. Help me create a chatbot or response system to handle these queries automatically."},
+{t:"Expense Tracking Automation",p:"Create a system that automatically tracks my expenses and categorizes them with minimal manual input."},
+{t:"Weekly Review Automation",p:"Design a system that summarizes my weekly work, achievements, and pending tasks automatically."},
+{t:"Notification Optimization",p:"I get too many notifications. Create a system to filter, prioritize, and automate alerts for only important updates."},
+{t:"Workflow Optimization Audit",p:"Analyze my current workflow: [describe]. Identify inefficiencies and suggest automation opportunities."},
+{t:"No-Code Automation Setup",p:"Teach me how to automate my work using no-code tools like Zapier or Make. Provide beginner-friendly steps."},
+{t:"Personal AI Assistant Setup",p:"Help me design a personal AI assistant that can handle scheduling, reminders, emails, and daily planning automatically."}
+]},
+{cat:"Content & Social Media",icon:"📱",items:[
+{t:"Quick Social Media Posts",p:"Turn this idea into 10 short posts. Each post must have a hook, a clear line, and a CTA. Idea: [paste idea]"},
+{t:"Short Video Scripts",p:"Write a 12 to 18 second script. Start with a hook. Add two punchy lines. End with a CTA. Topic: [paste topic]"},
+{t:"Humanize AI Content",p:"Use these rules before writing: Use clear simple language. Be spartan and informative. Write short punchy sentences. Use active voice. Focus on practical actionable insights. Use bullet points. Add real data or examples. Speak directly using 'you' and 'your'. Avoid em dashes, vague phrases, metaphors, clichés, and overused words."}
+]},
+{cat:"High-Income Skills 2026",icon:"💰",items:[
+{t:"Skill Selection Guide",p:"Act as a career strategist. Based on 2026 trends like AI agents and sustainable tech, list 5 high-income skills with low competition and exploding demand."},
+{t:"3-Month Learning Roadmap",p:"Create a 3-month structured learning roadmap to master [skill]. Include daily goals, hands-on tasks, free resources, and AI tools for acceleration."},
+{t:"Real Project Practice",p:"Give me 5 real-world, portfolio-ready project ideas to practice [skill], with step-by-step breakdowns and GitHub deployment tips."},
+{t:"Tool Mastery Plan",p:"List the top 5 tools pros use for [skill] in 2026. For each, provide a 1-week mastery plan, tutorials, and practice challenges."},
+{t:"Skill Stack Strategy",p:"Suggest 3 complementary skills to stack with [primary skill] for 2x-3x income potential, like combining AI with blockchain or edge computing."},
+{t:"Portfolio Builder Guide",p:"Guide me step-by-step to build a standout portfolio for [skill] as a beginner. Include template links, 3 project ideas, and SEO tips for visibility."},
+{t:"Continuous Growth System",p:"Design a weekly schedule for 2026 to level up [skill]: learning, building, networking, and tracking progress with KPIs."}
+]},
+{cat:"Productivity",icon:"💪",items:[
+{t:"Time Mastery",p:"I have these recurring tasks [list]. Suggest a time-blocking schedule to free 5 extra hours each week."},
+{t:"Productivity System",p:"Create a daily productivity system for a [role] professional to maximize output."},
+{t:"Daily Learning Automation",p:"I want to learn [skill]. Create a system where I automatically receive daily lessons, quizzes, and practice tasks."},
+{t:"E-commerce Task Automation",p:"I run an online store. Suggest ways to automate order processing, inventory updates, and customer communication."}
+]},
+];
+
+let activeCategory='All';
+let searchTerm='';
+
+function init(){
+ const catsEl=document.getElementById('cats');
+ const total=DATA.reduce((s,c)=>s+c.items.length,0);
+ let html=`<button class="cat-btn active" onclick="filterCat('All',this)">All<span class="cat-count">${total}</span></button>`;
+ DATA.forEach(c=>{html+=`<button class="cat-btn" onclick="filterCat('${c.cat}',this)">${c.icon} ${c.cat}<span class="cat-count">${c.items.length}</span></button>`;});
+ catsEl.innerHTML=html;
+ render();
+}
+
+function filterCat(cat,btn){
+ activeCategory=cat;
+ document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ render();
+}
+
+function hl(text,term){
+ if(!term)return text;
+ const re=new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi');
+ return text.replace(re,'<mark>$1</mark>');
+}
+
+function render(){
+ const q=searchTerm.toLowerCase();
+ let html='',count=0,gNum=0;
+ DATA.forEach(cat=>{
+  if(activeCategory!=='All'&&cat.cat!==activeCategory)return;
+  const filtered=cat.items.filter(i=>!q||i.t.toLowerCase().includes(q)||i.p.toLowerCase().includes(q));
+  if(!filtered.length)return;
+  html+=`<div class="section-hdr"><span class="emoji">${cat.icon}</span>${cat.cat}</div><div class="grid">`;
+  filtered.forEach((item,i)=>{
+   count++;gNum++;
+   html+=`<div class="card" onclick="toggleCard(this)" id="card-${gNum}">
+    <span class="card-num">#${gNum}</span>
+    <h3>${hl(item.t,searchTerm)}</h3>
+    <div class="card-prompt">${hl(item.p,searchTerm)}</div>
+    <span class="card-tag">${cat.cat}</span>
+    <div class="card-actions"><button class="copy-btn" onclick="copyPrompt(event,'${gNum}')">📋 Copy Prompt</button></div>
+   </div>`;
+  });
+  html+=`</div>`;
+ });
+ document.getElementById('content').innerHTML=html;
+ document.getElementById('noResults').style.display=count?'none':'block';
+ document.getElementById('stats').textContent=`Showing ${count} of ${DATA.reduce((s,c)=>s+c.items.length,0)} prompts`;
+}
+
+function toggleCard(el){if(!window.getSelection().toString())el.classList.toggle('expanded');}
+
+function copyPrompt(e,id){
+ e.stopPropagation();
+ const card=document.getElementById('card-'+id);
+ const text=card.querySelector('.card-prompt').textContent;
+ navigator.clipboard.writeText(text).then(()=>{
+  const btn=e.target;btn.textContent='✅ Copied!';btn.classList.add('copied');
+  setTimeout(()=>{btn.textContent='📋 Copy Prompt';btn.classList.remove('copied');},1500);
+ });
+}
+
+document.getElementById('searchInput').addEventListener('input',function(e){
+ searchTerm=e.target.value;render();
+});
+
+window.addEventListener('scroll',()=>{
+ document.getElementById('scrollTop').style.display=window.scrollY>300?'flex':'none';
+});
+
+init();
+</script>
+</body>
+</html>

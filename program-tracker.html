@@ -957,8 +957,8 @@
         <input type="file" id="jsonFileInput" accept=".json" onchange="importJSON(event)" style="display: none;" />
       </div>
       <footer class="sidebar-footer" id="sidebarFooter">
-        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch Theme">
-          <span class="theme-icon">🌙</span><span class="theme-text">Dark Mode</span>
+        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch to Light Mode">
+          <span class="theme-icon">☀️</span><span class="theme-text">Light Mode</span>
         </button>
       </footer>
     </aside>
@@ -1733,12 +1733,12 @@
       const icon = btn.querySelector('.theme-icon');
       const text = btn.querySelector('.theme-text');
       if (isLight) {
-        if (icon) icon.textContent = '☀️';
-        if (text) text.textContent = 'Light Mode';
-        btn.title = 'Switch to Dark Mode';
-      } else {
         if (icon) icon.textContent = '🌙';
         if (text) text.textContent = 'Dark Mode';
+        btn.title = 'Switch to Dark Mode';
+      } else {
+        if (icon) icon.textContent = '☀️';
+        if (text) text.textContent = 'Light Mode';
         btn.title = 'Switch to Light Mode';
       }
     }

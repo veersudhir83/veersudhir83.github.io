@@ -8,15 +8,18 @@ Welcome to my personal workspace repository! This repository hosts my profession
 A responsive, professional portfolio website highlighting:
 * **Experience**: 20+ years of leading enterprise technology, DevOps, and Cloud programs.
 * **Core Competencies**: Program Management, DevOps & CI/CD automation, Cloud Engineering (AWS/Azure), Agile, ITIL.
-* **Credentials**: TOGAF 9, ITIL 4, AWS Developer Associate, PagerDuty Foundational Practitioner.
+* **Credentials**: TOGAF 9, ITIL 4, AWS Developer Associate, PagerDuty Foundational Practitioner, DevOps Professional, Predix Certified.
 * **Interests & Contact info**: Quick social connections and inquiries.
+
+### Career Growth Plan (`5-year-career-growth-plan.html`)
+An interactive 5-year PM career growth framework — from mid-level Program Manager to Director/VP, with monthly actions, quarterly milestones, and annual checkpoints.
 
 ---
 
 ## 🛠 Tech Stack
 
-* **Structure & UI**: HTML5, Vanilla CSS3 (custom layouts & transitions), FontAwesome, Bootstrap (Resume page).
-* **Interactions & Core Logic**: Vanilla Javascript (ES6).
+* **Structure & UI**: HTML5, Vanilla CSS3 (custom layouts & transitions), FontAwesome, Bootstrap, IcoFont, Boxicons.
+* **Interactions & Core Logic**: jQuery, jQuery Waypoints, CounterUp.
 
 ---
 
@@ -24,9 +27,15 @@ A responsive, professional portfolio website highlighting:
 
 ```
 .
-├── README.md                     # This file
-├── index.html                    # Resume Landing Page
-└── assets/                       # Images, styling templates, and dependencies
+├── README.md                              # This file
+├── index.html                             # Resume & Portfolio Landing Page
+├── 5-year-career-growth-plan.html         # Interactive 5-Year PM Career Growth Plan
+├── Sudheer_Veeravalli_Resume.pdf          # Downloadable resume
+└── assets/
+    ├── css/style.css                      # Custom styles
+    ├── img/                               # Profile image and certification images
+    ├── js/main.js                         # Site interactivity
+    └── vendor/                            # Third-party libraries (Bootstrap, jQuery, etc.)
 ```
 
 ---
@@ -42,3 +51,4 @@ python3 -m http.server 8080
 
 Then visit:
 * Portfolio Website: `http://localhost:8080/index.html`
+* Career Growth Plan: `http://localhost:8080/5-year-career-growth-plan.html`

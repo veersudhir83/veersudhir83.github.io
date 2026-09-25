@@ -11,9 +11,6 @@ A responsive, professional portfolio website highlighting:
 * **Credentials**: TOGAF 9, ITIL 4, AWS Developer Associate, PagerDuty Foundational Practitioner, DevOps Professional, Predix Certified.
 * **Interests & Contact info**: Quick social connections and inquiries.
 
-### Career Growth Plan (`5-year-career-growth-plan.html`)
-An interactive 5-year PM career growth framework — from mid-level Program Manager to Director/VP, with monthly actions, quarterly milestones, and annual checkpoints.
-
 ---
 
 ## 🛠 Tech Stack
@@ -29,7 +26,6 @@ An interactive 5-year PM career growth framework — from mid-level Program Mana
 .
 ├── README.md                              # This file
 ├── index.html                             # Resume & Portfolio Landing Page
-├── 5-year-career-growth-plan.html         # Interactive 5-Year PM Career Growth Plan
 ├── Sudheer_Veeravalli_Resume.pdf          # Downloadable resume
 └── assets/
     ├── css/style.css                      # Custom styles
@@ -51,4 +47,3 @@ python3 -m http.server 8080
 
 Then visit:
 * Portfolio Website: `http://localhost:8080/index.html`
-* Career Growth Plan: `http://localhost:8080/5-year-career-growth-plan.html`
